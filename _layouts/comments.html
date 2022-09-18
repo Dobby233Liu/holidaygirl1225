@@ -5,15 +5,15 @@ read_music_from_op: true
 
 {% comment %} FIXME: Copypasta {% endcomment %}
 
+{% assign true_path = "/" | append: page.op_id | replace: "-", "/" %}
 {% for post in site.posts %}
-  {% if post.path == page.op_id %}
+  {% if post.path == true_path %}
     {% assign op = post %}
     {% break %}
   {% endif %}
 {% endfor %}
 
-{% assign myid = page.op_id | replace_first: "/", "" | replace: "/", "-" %}
-{% assign comments = site.data.comments[myid] %}
+{% assign comments = site.data.comments[page.op_id] %}
 {% assign actual_comments_count = 0 %}
 {% for comment in comments.contents %}
   {% if comment.author > 0 %}
@@ -29,14 +29,15 @@ read_music_from_op: true
 {% for comment in comments.contents %}
 {% assign user_id = comment.author | minus: 1 %}
 {% if user_id >= 0 %}
-{% assign user = site.data.users[user_id] %}
+{% assign user = site.data.users.users[user_id] %}
 {% assign avatar = user.avatar | default: "user.png" %}
 <div class="comment">
   <div class="author">
     <img alt="{{ user.avatar_alt | default: 'Default Avatar' }}" class="avatar"
      src="{{ '/assets/images/' | append: avatar | relative_url }}">
     <div class="user{% if user.admin %} admin{% endif %}">
-      <img alt="User" class="icon" src="/assets/images/user-icon.png">
+      <img alt="User" class="icon"
+       src="{{ '/assets/images/user-icon.png' | relative_url }}">
       <span class="name{% if user.special %} n{% endif %}">{{ user.name }}</span>
     </div>
   </div>
@@ -47,7 +48,7 @@ read_music_from_op: true
 {% else %}
 <div class="alert">
   {% if comment.type == "locked" %}
-  <img alt="Lock" class="icon" src="/assets/images/lock.png">
+  <img alt="Lock" class="icon" src="{{ '/assets/images/lock.png' | relative_url }}">
   <span>[Thread has been LOCKED. Normal users can no longer post.]</span>
   {% endif %}
 </div>
