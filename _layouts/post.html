@@ -31,8 +31,17 @@ layout: page
     <a href="{{ post_url }}/comments">{{ actual_comments_count }} comments</a>
     {% endif %}
     {% endif %}
-    <a class="disabled" href="#"
-       {% if comments.locked != null and comments.locked %}title="Comments Disabled"{% endif %}
+    <a href="#"
+       {% comment %} jank {% endcomment %}
+       {% if site.comments_avaliable %}
+         {% if comments.locked != null and comments.locked %}
+           class="disabled"
+           title="Comments Disabled"
+         {% endif %}
+       {% else %}
+         class="disabled"
+         title="Comments Disabled"
+       {% endif %}
     >(leave a comment)</a>
   </div>
 </div>
