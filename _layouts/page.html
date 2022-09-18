@@ -5,8 +5,9 @@ layout: default
 {% if page.music or layout.read_music_from_op %}
 {% assign sources = page.music %}
 {% if layout.read_music_from_op %}
+  {% assign true_path = "/" | append: page.op_id | replace: "-", "/" %}
   {% for post in site.posts %}
-    {% if post.path == page.op_id %}
+    {% if post.path == true_path %}
       {% assign sources = post.music %}
       {% break %}
     {% endif %}
