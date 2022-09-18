@@ -15,6 +15,9 @@
     padding: 1rem;
     border: 2px inset white;
   }
+  &.private {
+    border: 4px inset gray;
+  }
 }
 
 .post-footer {
