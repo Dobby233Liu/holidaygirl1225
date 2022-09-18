@@ -7,7 +7,7 @@ read_music_from_op: true
 
 {% assign true_path = "/" | append: page.op_id | replace: "-", "/" %}
 {% for post in site.posts %}
-  {% if post.path == true_path %}
+  {% if post.url == true_path %}
     {% assign op = post %}
     {% break %}
   {% endif %}
@@ -70,7 +70,7 @@ read_music_from_op: true
     (leave a comment)
   </a>
 </div>
-<a class="back" href="{{ op.url }}">&lt; back</a>
+<a class="back" href="{{ op.url | relative_url }}">&lt; back</a>
 
 <script>
   var n = 'smartgenius555';
