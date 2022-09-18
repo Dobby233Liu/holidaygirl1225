@@ -1,1 +1,19 @@
 title: "Welcome to holidaygirl1225's game secrets, glitches, and theories blog!"
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
