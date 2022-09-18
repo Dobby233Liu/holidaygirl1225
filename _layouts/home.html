@@ -10,8 +10,8 @@ layout: page
 {% unless post.private %}
 <div class="post">
   <h2>{{ post.url | replace_first: "/", "" }}</h2>
-  <p>{{ post.excerpt | markdownify }}</p>
-  <p><a href="{{ post.url | relative_path }}">&lt; Read more</a></p>
+  {{ post.excerpt | markdownify }}
+  <p><a href="{{ post.url | relative_url }}">&lt; Read more</a></p>
   {% include comments_footer.html page=post %}
 </div>
 {% endunless %}
