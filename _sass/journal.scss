@@ -1,0 +1,105 @@
+$bold-font: 'Georgia', Georgia, serif;
+$regular-font: 'Georgia', Georgia, serif;
+
+html {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: url('/assets/images/bg-tree.png');
+  background-color: #ffd5ef;
+  color: black;
+  font-family: $regular-font;
+  padding: 1rem;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+h1, h2, h3 {
+  font-family: $bold-font;
+}
+
+.header {
+  display: flex;
+  font-size: 36px;
+  background: #EFBCE7;
+  margin-top: 0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  .welcome {
+    flex-grow: 1;
+    max-width: 80%;
+    object-fit: contain;
+  }
+  .ornament {
+    flex-grow: 1;
+    margin-left: 1rem;
+    max-width: 20%;
+    max-height: 100px;
+    object-fit: contain;
+  }
+}
+
+@import "posts";
+
+@import "comments";
+
+.alert {
+  color: #01620c;
+  background-color: #FFA9A9;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  img {
+    float: left;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+}
+
+.back {
+  display: inline-block;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 24px;
+}
+
+body.dark {
+  color: white;
+  background: black;
+  background-image: none;
+  .header, .post {
+    background: #555555;
+    a {
+      color: #61d9ff;
+    }
+  }
+  .header {
+    opacity: 0;
+  }
+  .post-footer {
+    border-color: white;
+  }
+  .alert {
+    background-color: #AA0000;
+    color: white;
+  }
+}
+
+.music {
+  text-align: right;
+}
+
+@import "reallyplayer";

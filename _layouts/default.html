@@ -1,1 +1,14 @@
-{{ content }}
+---
+---
+
+<!DOCTYPE HTML>
+<html lang="{{ site.language | default: 'en' }}">
+  {{ include "head.html" }}
+  <body class="{% if page.dark %}dark{% else %}body{% endif %}">
+    <div class="wrapper">
+      {{ include "header.html" }}
+      {{ content }}
+    </div>
+    {{ include "footer_scripts.html" }} 
+  </body>
+</html>

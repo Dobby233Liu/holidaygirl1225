@@ -1,0 +1,31 @@
+.post {
+  background: #EFBCE7;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  p {
+    margin-top: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .screenshot {
+    image-rendering: pixelated;
+    height: 32px;
+    width: 32px;
+    padding: 1rem;
+    border: 2px inset white;
+  }
+}
+
+.post-footer {
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  div:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+  strong {
+    margin-right: 0.25rem;
+  }
+}
