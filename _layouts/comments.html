@@ -6,13 +6,14 @@ read_music_from_op: true
 {% comment %} FIXME: Copypasta {% endcomment %}
 
 {% for post in site.posts %}
-  {% if post.id == page.op_id %}
+  {% if post.path == page.op_id %}
     {% assign op = post %}
     {% break %}
   {% endif %}
 {% endfor %}
 
-{% assign comments = site.data.comments[page.op_id] %}
+{% assign myid = page.op_id | replace_first: "/", "" | replace: "/", "-" %}
+{% assign comments = site.data.comments[myid] %}
 {% for comment in comments.contents %}
   {% if comment.author > 0 %}
     {% increment actual_comments_count %}
