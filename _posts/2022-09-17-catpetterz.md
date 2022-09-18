@@ -1,6 +1,6 @@
 ---
 music:
-  - file: results # midi-holiday_country
+  - file: results.ogg # midi-holiday_country.mp3
     mimetype: audio/ogg
 mood: Nostalgic
 listening_to: Cat Petterz 2 OST (Corrupted) - No Cats
@@ -21,6 +21,6 @@ Then the game will freeze and the music will glitch out.
 
 I was so scared of seeing this message as a kid, I would punish my pets so that they would NEVER fall in love. If an egg did appear, I would throw in the trash right away.
 
-
+ 
 
 [Until one day...]({% post_url 2022-09-17-egg %})
