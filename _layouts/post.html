@@ -20,9 +20,10 @@ layout: page
   {% endif %}
 
   <div class="comments-footer">
+    {{ page.url }}
     {% assign myid = page.url | replace_first: "/", "" | replace: "/", "-" %}
     {% assign comments = site.data.comments[myid] %}
-    {% if comments != null %}
+    {% if comments %}
     {% for comment in comments.contents %}
     {% assign actual_comments_count = 0 %}
     {% if comment.author > 0 %}
