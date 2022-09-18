@@ -10,7 +10,7 @@ a {
 }
 
 body {
-  background-image: url('/assets/images/bg-tree.png');
+  background-image: $back-image;
   background-color: #ffd5ef;
   color: black;
   font-family: $regular-font;
@@ -48,9 +48,9 @@ h1, h2, h3 {
   }
 }
 
-@import "posts";
+@import "holidaygirl1225/posts";
 
-@import "comments";
+@import "holidaygirl1225/comments";
 
 .alert {
   color: #01620c;
@@ -102,4 +102,4 @@ body.dark {
   text-align: right;
 }
 
-@import "reallyplayer";
+@import "holidaygirl1225/reallyplayer";
