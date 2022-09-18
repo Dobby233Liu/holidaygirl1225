@@ -21,6 +21,6 @@ Then the game will freeze and the music will glitch out.
 
 I was so scared of seeing this message as a kid, I would punish my pets so that they would NEVER fall in love. If an egg did appear, I would throw in the trash right away.
 
-<p></p>
+<p> </p>
 
 [Until one day...]({% post_url 2022-09-17-egg %})
