@@ -2,8 +2,17 @@
 layout: default
 ---
 
-{% if page.music %}
-{% include reallyplayer.html player_sources=page.music %}
+{% if page.music or layout.read_music_from_op %}
+{% assign sources = page.music %}
+{% if layout.read_music_from_op %}
+  {% for post in site.posts %}
+    {% if post.name == page.name %}
+      {% assign sources = post.music %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% include reallyplayer.html player_sources=sources %}
 {% endif %}
 <main>
    {{ content }}

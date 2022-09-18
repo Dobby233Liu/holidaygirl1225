@@ -53,10 +53,7 @@ contents:
 
       I think I need to lock this thread as it contains personal information. Thanks everyone for your interest.
 
-  # <div class="alert">
-  #    <img alt="Lock" class="icon" src="/assets/images/lock.png"><span>[Thread has been LOCKED. Normal users can no longer post.]</span>
-  # </div>
-  - author: -1 # system message
+  - author: 0 # system message
     type: locked
 
   - author: 2

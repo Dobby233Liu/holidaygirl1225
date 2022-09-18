@@ -1,4 +1,10 @@
 title: "Welcome to holidaygirl1225's game secrets, glitches, and theories blog!"
+
+collections:
+  comments:
+    output: true
+    permalink: /:title/:collection
+
 defaults:
   -
     scope:
@@ -6,3 +12,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "_comments/"
+    values:
+      layout: "comments"

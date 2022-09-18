@@ -3,7 +3,7 @@ layout: page
 ---
 
 {% if page.private %}<div class="alert">
-  <img alt="Lock" class="icon" src="/assets/images/lock.png">
+  <img alt="Lock" class="icon" src="{{ '/assets/images/lock.png' | relative_url }}">
   <span>[This is a private post. Only friends can see this.]</span>
 </div>{% endif %}
 <div class="post">

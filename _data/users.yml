@@ -2,21 +2,14 @@
 # For fake comment system
 
 users:
-  - id: 1
-    name: holidaygirl1225
+  - name: holidaygirl1225
     avatar: holidaygirl-icon.gif
+    avatar_alt: holidaygirl1225
     admin: true
-  - id: 2
-    name: sports
+  - name: sports
     avatar: sports.png
+    avatar_alt: Soccer Ball
     admin: true
-  # var n = 'smartgenius555';
-  # for (var i = 0; i < 8; i++) {
-  #    n += Math.floor(Math.random() * 10);
-  # } 
-  # $('.n').html(n);
-  - id: 3
-    name: smartgenius5554738292
+  - name: smartgenius5554738292
     special: true
-  - id: 4
-    name: smartgeniusnewadmin
+  - name: smartgeniusnewadmin

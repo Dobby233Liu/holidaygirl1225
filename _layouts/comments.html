@@ -1,0 +1,78 @@
+---
+layout: page
+read_music_from_op: true
+---
+
+{% comment %} FIXME: Copypasta {% endcomment %}
+
+{% for post in site.posts %}
+  {% if post.name == page.name %}
+    {% assign op = post %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign comments = site.data.comments[page.name] %}
+{% for comment in comments.contents %}
+  {% if comment.author > 0 %}
+    {% increment actual_comments_count %}
+  {% endif %}
+{% endfor %}
+
+<h2 class="comments-header">
+  {{ actual_comments_count }} comments
+  {% if comments.locked %}<small>(locked)</small>{% endif %}
+</h2>
+
+{% for comment in comments.contents %}
+{% assign user_id = comment.user | minus: 1 %}
+{% if user_id >= 0 %}
+{% assign user = site.data.users[user_id] %}
+{% assign avatar = user.avatar | default: "user.png" %}
+<div class="comment">
+  <div class="author">
+    <img alt="{{ user.avatar_alt | default: 'Default Avatar' }}" class="avatar"
+     src="{{ '/assets/images/' | append: avatar | relative_url }}">
+    <div class="user{% if user.admin %} admin{% endif %}">
+      <img alt="User" class="icon" src="/assets/images/user-icon.png">
+      <span class="name{% if user.special %} n{% endif %}">{{ user.name }}</span>
+    </div>
+  </div>
+  <div class="comment-body">
+    {{ comment.contents | markdownify }}
+  </div>
+</div>
+{% else %}
+<div class="alert">
+  {% if comment.type == "locked" %}
+  <img alt="Lock" class="icon" src="/assets/images/lock.png">
+  <span>[Thread has been LOCKED. Normal users can no longer post.]</span>
+  {% endif %}
+</div>
+{% endif %}
+{% endfor %}
+
+<div class="comments-footer">
+  <a href="#"
+    {% comment %} jank {% endcomment %}
+    {% if site.comments_avaliable %}
+      {% if comments.locked != null and comments.locked %}
+        class="disabled"
+        title="Comments Disabled"
+      {% endif %}
+    {% else %}
+      class="disabled"
+      title="Comments Disabled"
+    {% endif %}>
+    (leave a comment)
+  </a>
+</div>
+<a class="back" href="{{ op.url }}">&lt; back</a>
+
+<script>
+  var n = 'smartgenius555';
+  for (var i = 0; i < 8; i++) {
+     n += Math.floor(Math.random() * 10);
+  }
+  $('.n').html(n);
+</script>
