@@ -6,7 +6,7 @@ layout: default
 {% assign sources = page.music %}
 {% if layout.read_music_from_op %}
   {% for post in site.posts %}
-    {% if post.name == page.name %}
+    {% if post.id == page.op_id %}
       {% assign sources = post.music %}
       {% break %}
     {% endif %}
