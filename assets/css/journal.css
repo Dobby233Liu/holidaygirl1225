@@ -1,5 +1,0 @@
----
----
-
-$back-image: url("{{ '/assets/images/bg-tree.png' | relative_url }}");
-@import "holidaygirl1225/journal";
