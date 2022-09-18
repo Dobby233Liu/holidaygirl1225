@@ -11,7 +11,7 @@ layout: page
 <div class="post">
   <h2>{{ post.url | replace_first: "/", "" }}</h2>
   {{ post.excerpt | markdownify }}
-  <p><a href="{{ post.url | relative_url }}">&lt; Read more</a></p>
+  <span class="read-more"><a href="{{ post.url | relative_url }}">&gt; Read more</a></span>
   {% include comments_footer.html page=post %}
 </div>
 {% endunless %}
