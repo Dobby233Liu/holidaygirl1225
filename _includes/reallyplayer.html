@@ -1,7 +1,7 @@
 <div class="music really-player-container">
   <div class="really-player">
     <button aria-label="Play" class="play-button"></button>
-    <img aria-hidden="true" class="volume-icon" src="{{ '/assets/images/volume.png' | absolute_url }}">
+    <img aria-hidden="true" class="volume-icon" src="{{ '/assets/images/volume.png' | relative_url }}">
     <input aria-label="Volume" class="volume" max="100" min="0" type="range" value="50">
     <audio loop volume="0.5">
       {{ include.player_sources }}

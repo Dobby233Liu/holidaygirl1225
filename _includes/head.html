@@ -3,5 +3,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width" name="viewport">
   <title>{{ site.title }}</title>
-  <link href="{{ '/assets/css/journal.css' | absolute_url }}" rel="stylesheet" type="text/css">
+  <link href="{{ '/assets/css/journal.css' | relative_url }}" rel="stylesheet" type="text/css">
+  {% include custom_head.html %}
 </head>
