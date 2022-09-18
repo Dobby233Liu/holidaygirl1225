@@ -1,0 +1,18 @@
+---
+layout: page
+---
+
+{% if content != null and content != "" %}
+<div class="post">{{ content }}</div>
+{% endif %}
+
+{% for post in site.posts %}
+{% unless post.private %}
+<div class="post">
+  <h2>{{ post.url | replace_first: "/", "" }}</h2>
+  <p>{{ post.excerpt | markdownify }}</p>
+  <p><a href="{{ post.url | relative_path }}">&lt; Read more</a></p>
+  {% include comments_footer.html page=post %}
+</div>
+{% endunless %}
+{% endfor %} 

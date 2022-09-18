@@ -19,33 +19,5 @@ layout: page
   </div>
   {% endif %}
 
-  <div class="comments-footer">
-    {% assign myid = page.url | replace_first: "/", "" | replace: "/", "-" %}
-    {% assign comments = site.data.comments[myid] %}
-    {% if comments %}
-    {% assign actual_comments_count = 0 %}
-    {% for comment in comments.contents %}
-    {% if comment.author > 0 %}
-    {% assign actual_comments_count = actual_comments_count | plus: 1 %}
-    {% endif %}
-    {% endfor %}
-    {% if actual_comments_count > 0 %}
-    <a href="{{ page.url | append: '/comments' | relative_url }}">
-      {{ actual_comments_count }} comment{% if actual_comments_count > 1 %}s{% endif %}
-    </a>
-    {% endif %}
-    {% endif %}
-    <a href="#"
-       {% comment %} jank {% endcomment %}
-       {% if site.comments_avaliable %}
-         {% if comments.locked != null and comments.locked %}
-           class="disabled"
-           title="Comments Disabled"
-         {% endif %}
-       {% else %}
-         class="disabled"
-         title="Comments Disabled"
-       {% endif %}
-    >(leave a comment)</a>
-  </div>
+  {% include comments_footer.html page=page %}
 </div>
