@@ -35,6 +35,7 @@ jobs:
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
+          jekyll_src: .
           enable_cache: true
           format_output: false
       - name: Upload artifact
