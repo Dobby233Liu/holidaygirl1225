@@ -11,10 +11,10 @@ layout: page
   {% if page.mood or page.listening_to %}
   <div class="post-footer">
     {% if page.mood %}<div class="mood">
-      <strong>Mood:</strong><span>{% page.mood %}</span>
+      <strong>Mood:</strong><span>{{ page.mood }}</span>
     </div>{% endif %}
     {% if page.listening_to %}<div class="listening-to">
-      <strong>Listening to:</strong><span>{% page.listening_to %}</span>
+      <strong>Listening to:</strong><span>{{ page.listening_to }}</span>
     </div>{% endif %}
   </div>
   {% endif %}
