@@ -3,15 +3,8 @@ layout: default
 ---
 
 {% if page.music %}
-{% capture audio %}
-{% for source in page.music %}
-<source
-  src="{{ site.holidaygirl1225.audio_assets_dir | default: '/assets/audio/' | append: source.file | relative_url }}"
-  type="{{ source.mimetype | default: 'audio/mp3' }}" />
-{% endfor %}
-{% endcapture %}
-{% include reallyplayer.html player_sources=audio %}
+{% include reallyplayer.html player_sources=page.music %}
 {% endif %}
 <main>
-   {{ content }} 
+   {{ content }}
 </main>

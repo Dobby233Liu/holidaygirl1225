@@ -4,7 +4,11 @@
     <img aria-hidden="true" class="volume-icon" src="{{ '/assets/images/volume.png' | relative_url }}">
     <input aria-label="Volume" class="volume" max="100" min="0" type="range" value="50">
     <audio loop volume="0.5">
-      {{ include.player_sources }}
+      {% for source in include.player_sources %}
+      <source
+        src="{{ site.holidaygirl1225.audio_assets_dir | default: '/assets/audio/' | append: source.file | relative_url }}"
+        type="{{ source.mimetype | default: 'audio/mp3' }}" />
+      {% endfor %}
     </audio>
   </div>
 </div>
