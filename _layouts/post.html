@@ -20,7 +20,6 @@ layout: page
   {% endif %}
 
   <div class="comments-footer">
-    {{ page.url }}
     {% assign myid = page.url | replace_first: "/", "" | replace: "/", "-" %}
     {% assign comments = site.data.comments[myid] %}
     {% if comments %}
