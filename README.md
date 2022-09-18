@@ -49,6 +49,6 @@ To add a custom directory to your theme-gem, please edit the regexp in `holidayg
 
 ## License
 
-Styles and slight bits of page code taken from DELTARUNE.com. (C) 2022 Toby Fox, Fangamer;
+A HUGE part of this was taken from DELTARUNE.com on September 17, 2022. (C) 2022 Toby Fox, Fangamer;
 
 Other parts of this theme is covered under the terms of the [MIT License](https://opensource.org/licenses/MIT).
