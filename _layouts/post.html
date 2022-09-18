@@ -18,18 +18,21 @@ layout: page
     </div>{% endif %}
   </div>
   {% endif %}
-  {% if site.data.comments[page.name] %}
-  {% assign comments = site.data.comments[page.name] %}
-  {% for comment in comments.contents %}
-  {% if comment.author > 0 %}
-  {% increment actual_comments_count %}
-  {% endif %}
-  {% endfor %}
+
   <div class="comments-footer">
+    {% assign comments = site.data.comments[page.name] %}
+    {% if comments %}
+    {% for comment in comments.contents %}
+    {% if comment.author > 0 %}
+    {% increment actual_comments_count %}
+    {% endif %}
+    {% endfor %}
+    {% if actual_comments_count > 0 %}
     <a href="{{ post_url }}/comments">{{ actual_comments_count }} comments</a>
+    {% endif %}
+    {% endif %}
     <a class="disabled" href="#"
        {% if comments.locked %}title="Comments Disabled"{% endif %}
     >(leave a comment)</a>
   </div>
-  {% endif %}
 </div>
