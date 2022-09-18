@@ -1,14 +1,12 @@
 # holidaygirl1225
 
-Festive theme of a deer's gaming blog, ported to Jekyll.
+The festive interface of a deer's gaming blog ported to Jekyll. As well as an archive of known holidaygirl1225 blog posts in the 2022 Deltarune Spamton Sweepstakes "ARG".
 
-## Temporary text
+The "demo" archice can be found [here](https://dobby233liu.github.io/holidaygirl1225/).
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+**NOTE**: This theme is not recommended for production sites yet.
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-## Installation
+<!-- ## Installation
 
 Add this line to your Jekyll site's `Gemfile`:
 
@@ -29,6 +27,8 @@ And then execute:
 Or install it yourself as:
 
     $ gem install holiday1225
+
+-->
 
 ## Usage
 
