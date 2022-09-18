@@ -20,6 +20,7 @@ layout: page
   {% endif %}
 
   <div class="comments-footer">
+    {{ page.name }}
     {% assign comments = site.data.comments[page.name] %}
     {% if comments %}
     {% for comment in comments.contents %}
