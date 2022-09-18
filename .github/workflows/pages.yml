@@ -36,6 +36,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           jekyll_src: .
+          custom_opts: "-b ${{ github.event.repository.name }}/"
           enable_cache: true
           format_output: false
       - name: Upload artifact
