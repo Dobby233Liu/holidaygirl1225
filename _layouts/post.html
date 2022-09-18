@@ -32,7 +32,7 @@ layout: page
     {% endif %}
     {% endif %}
     <a class="disabled" href="#"
-       {% if comments.locked %}title="Comments Disabled"{% endif %}
+       {% if comments.locked != null and comments.locked %}title="Comments Disabled"{% endif %}
     >(leave a comment)</a>
   </div>
 </div>
