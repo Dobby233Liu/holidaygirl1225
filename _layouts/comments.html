@@ -14,9 +14,10 @@ read_music_from_op: true
 
 {% assign myid = page.op_id | replace_first: "/", "" | replace: "/", "-" %}
 {% assign comments = site.data.comments[myid] %}
+{% assign actual_comments_count = 0 %}
 {% for comment in comments.contents %}
   {% if comment.author > 0 %}
-    {% increment actual_comments_count %}
+    {% assign actual_comments_count = actual_comments_count | plus: 1 %}
   {% endif %}
 {% endfor %}
 
@@ -26,7 +27,7 @@ read_music_from_op: true
 </h2>
 
 {% for comment in comments.contents %}
-{% assign user_id = comment.user | minus: 1 %}
+{% assign user_id = comment.author | minus: 1 %}
 {% if user_id >= 0 %}
 {% assign user = site.data.users[user_id] %}
 {% assign avatar = user.avatar | default: "user.png" %}
