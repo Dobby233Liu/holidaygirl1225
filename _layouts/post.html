@@ -2,16 +2,22 @@
 layout: page
 ---
 
+{% if page.private %}<div class="alert">
+  <img alt="Lock" class="icon" src="/assets/images/lock.png">
+  <span>[This is a private post. Only friends can see this.]</span>
+</div>{% endif %}
 <div class="post">
-  {{ content }} 
+  {{ content }}
+  {% if page.mood or page.listening_to %}
   <div class="post-footer">
-    <div class="mood">
-      <strong>Mood:</strong><span>Curious</span>
-    </div>
-    <div class="listening-to">
-      <strong>Listening to:</strong><span>Blood Crushers The Band - Raise Up Your Bat</span>
-    </div>
+    {% if page.mood %}<div class="mood">
+      <strong>Mood:</strong><span>{% page.mood %}</span>
+    </div>{% endif %}
+    {% if page.listening_to %}<div class="listening-to">
+      <strong>Listening to:</strong><span>{% page.listening_to %}</span>
+    </div>{% endif %}
   </div>
+  {% endif %}
   <div class="comments-footer">
     <a href="{{ post_url }}/comments">14 comments</a><a class="disabled" href="#" title="Comments Disabled">(leave a comment)</a>
   </div>
