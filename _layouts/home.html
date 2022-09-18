@@ -8,7 +8,7 @@ layout: page
 
 {% for post in site.posts %}
 <div class="post{% if post.private %} private{% endif %}">
-  <h2>{{ post.url | replace_first: "/", "" }}</h2>{% if post.private %} <small>(private)</small>{% endif %}
+  <h2><a href="{{ post.url | relative_url }}">{{ post.url | replace_first: "/", "" }}</a></h2>{% if post.private %} <small>(private)</small>{% endif %}
   {{ post.excerpt | markdownify }}
   <span class="read-more"><a href="{{ post.url | relative_url }}">&gt; Read more</a></span>
   {% include comments_footer.html page=post %}
